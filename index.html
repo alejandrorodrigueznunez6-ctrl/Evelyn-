@@ -320,9 +320,9 @@
   </button>
   <div class="music-tooltip">Haz clic para reproducir la música</div>
 
-  <!-- Audio (coloca el archivo musica.mp3 en la misma carpeta) -->
-  <audio id="bgMusic" loop>
-    <source src="musica.mp3" type="audio/mpeg">
+  <!-- Audio con música romántica en línea -->
+  <audio id="bgMusic" loop crossorigin="anonymous">
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
   </audio>
 
   <script>
@@ -358,7 +358,8 @@
       } else {
         bgMusic.volume = 0.45; // volumen suave
         bgMusic.play().catch(e => {
-          alert('Sube un archivo llamado "musica.mp3" en la misma carpeta del index.html');
+          console.error('Error al reproducir música:', e);
+          alert('No se pudo reproducir la música. Por favor, intenta nuevamente.');
         });
         musicBtn.innerHTML = '💖';
         musicBtn.classList.add('playing');
@@ -367,4 +368,4 @@
     });
   </script>
 </body>
-  </html>
+</html>
